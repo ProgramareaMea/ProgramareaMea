@@ -17,10 +17,10 @@ internal class AuthRepository {
     private val rootRef = FirebaseFirestore.getInstance()
     private val usersRef = rootRef.collection(Constants.USERS)
 
-    fun firebaseSignInWithGoogle(googleAuthCredential: AuthCredential?): MutableLiveData<User> {
+    fun firebaseSignInWithGoogle(googleAuthCredential: AuthCredential): MutableLiveData<User> {
         val authenticatedUserMutableLiveData =
             MutableLiveData<User>()
-        firebaseAuth.signInWithCredential(googleAuthCredential!!)
+        firebaseAuth.signInWithCredential(googleAuthCredential)
             .addOnCompleteListener { authTask: Task<AuthResult> ->
                 if (authTask.isSuccessful) {
                     val isNewUser =

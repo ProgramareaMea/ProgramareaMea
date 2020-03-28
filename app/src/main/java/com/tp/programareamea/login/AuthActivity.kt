@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.google.android.gms.auth.api.signin.GoogleSignIn
@@ -17,6 +18,7 @@ import com.google.firebase.auth.GoogleAuthProvider
 import com.tp.programareamea.R
 import com.tp.programareamea.databinding.ActivityAuthBinding
 import com.tp.programareamea.firebase.User
+import com.tp.programareamea.mainActivity.MainActivity
 import com.tp.programareamea.utils.Constants.Companion.USER
 
 
@@ -30,8 +32,7 @@ class AuthActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_auth)
-
+        binding=DataBindingUtil.setContentView(this,R.layout.activity_auth)
         initAuthViewModel()
         initSignInButton()
         initGoogleSignInClient()
@@ -49,6 +50,7 @@ class AuthActivity : AppCompatActivity() {
     private fun initGoogleSignInClient() {
         gso =
             GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestIdToken(getString(R.string.default_web_client_id))
                 .requestEmail()
                 .build()
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso)
@@ -119,7 +121,7 @@ class AuthActivity : AppCompatActivity() {
     }
 
     private fun goToMainActivity(user: User) {
-        val intent = Intent(this@AuthActivity, AuthActivity::class.java)
+        val intent = Intent(this, MainActivity::class.java)
         intent.putExtra(USER, user)
         startActivity(intent)
         finish()
