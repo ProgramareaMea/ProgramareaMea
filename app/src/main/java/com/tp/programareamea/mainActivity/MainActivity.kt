@@ -1,4 +1,4 @@
-package com.tp.programareamea.activities
+package com.tp.programareamea.mainActivity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
