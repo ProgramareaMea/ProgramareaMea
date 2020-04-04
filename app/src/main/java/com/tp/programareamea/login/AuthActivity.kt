@@ -28,7 +28,7 @@ class AuthActivity : AppCompatActivity() {
     private var authViewModel: AuthViewModel? = null
     val RC_SIGN_IN: Int = 1
     lateinit var mGoogleSignInClient: GoogleSignInClient
-    lateinit var gso: GoogleSignInOptions
+    lateinit var googleSignInOptions: GoogleSignInOptions
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -48,12 +48,12 @@ class AuthActivity : AppCompatActivity() {
     }
 
     private fun initGoogleSignInClient() {
-        gso =
+        googleSignInOptions =
             GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken(getString(R.string.default_web_client_id))
                 .requestEmail()
                 .build()
-        mGoogleSignInClient = GoogleSignIn.getClient(this, gso)
+        mGoogleSignInClient = GoogleSignIn.getClient(this, googleSignInOptions)
 
         val account =
             GoogleSignIn.getLastSignedInAccount(this)// If account is not null, the user is already SIGNED IN
@@ -90,6 +90,7 @@ class AuthActivity : AppCompatActivity() {
         signInWithGoogleAuthCredential(googleAuthCredential)
     }
 
+    //Sign in using Google Credentials using
     private fun signInWithGoogleAuthCredential(googleAuthCredential: AuthCredential) {
         authViewModel!!.signInWithGoogle(googleAuthCredential)
         authViewModel!!.authenticatedUserLiveData!!.observe(this,
@@ -103,6 +104,7 @@ class AuthActivity : AppCompatActivity() {
         )
     }
 
+    //Create User
     private fun createNewUser(authenticatedUser: User) {
         authViewModel!!.createUser(authenticatedUser)
         authViewModel!!.createdUserLiveData!!.observe(
@@ -120,6 +122,7 @@ class AuthActivity : AppCompatActivity() {
         )
     }
 
+    //Changes to main activity after login
     private fun goToMainActivity(user: User) {
         val intent = Intent(this, MainActivity::class.java)
         intent.putExtra(USER, user)

@@ -15,6 +15,7 @@ class SplashRepository {
     private val rootRef = FirebaseFirestore.getInstance()
     private val user = User()
     private val usersRef = rootRef.collection(USERS)
+
     fun checkIfUserIsAuthenticatedInFirebase(): MutableLiveData<User> {
         val isUserAuthenticateInFirebaseMutableLiveData: MutableLiveData<User> =
             MutableLiveData<User>()
@@ -30,6 +31,7 @@ class SplashRepository {
         return isUserAuthenticateInFirebaseMutableLiveData
     }
 
+    //Gets user data from Firestore, creates User class, and stores in LiveData
     fun addUserToLiveData(uid: String?): MutableLiveData<User> {
         val userMutableLiveData: MutableLiveData<User> = MutableLiveData<User>()
         usersRef.document(uid!!).get()

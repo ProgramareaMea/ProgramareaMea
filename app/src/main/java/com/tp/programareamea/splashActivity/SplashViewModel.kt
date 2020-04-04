@@ -11,6 +11,7 @@ class SplashViewModel(application: Application?) :
     private val splashRepository: SplashRepository = SplashRepository()
     var isUserAuthenticatedLiveData: LiveData<User>? = null
     var userLiveData: LiveData<User>? = null
+
     fun checkIfUserIsAuthenticated() {
         isUserAuthenticatedLiveData = splashRepository.checkIfUserIsAuthenticatedInFirebase()
     }

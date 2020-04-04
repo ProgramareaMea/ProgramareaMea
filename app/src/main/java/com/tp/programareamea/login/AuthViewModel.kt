@@ -19,6 +19,7 @@ class AuthViewModel(application: Application?) : AndroidViewModel(application!!)
     var createdUserLiveData: LiveData<User>? = null
 
 
+
     fun signInWithGoogle(googleAuthCredential: AuthCredential) {
         authenticatedUserLiveData = authRepository.firebaseSignInWithGoogle(googleAuthCredential)
     }

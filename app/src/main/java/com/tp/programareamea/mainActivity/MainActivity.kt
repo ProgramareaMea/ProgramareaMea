@@ -35,10 +35,15 @@ class MainActivity : AppCompatActivity() {
             GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .build()
         googleSignInClient = GoogleSignIn.getClient(this, googleSignInOptions)
+
+        val account =
+            GoogleSignIn.getLastSignedInAccount(this)// If account is not null, the user is already SIGNED IN
     }
 
     private fun setMessageToMessageTextView(user: User) {
         val message = "You are logged in as: " + user.name
         binding.mainTextView.text = message
     }
+
+
 }

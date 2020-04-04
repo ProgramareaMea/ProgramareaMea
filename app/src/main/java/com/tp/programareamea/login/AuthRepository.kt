@@ -24,7 +24,7 @@ internal class AuthRepository {
             .addOnCompleteListener { authTask: Task<AuthResult> ->
                 if (authTask.isSuccessful) {
                     val isNewUser =
-                        authTask.result!!.additionalUserInfo!!.isNewUser
+                        authTask.result?.additionalUserInfo?.isNewUser ?: true
                     val firebaseUser = firebaseAuth.currentUser
                     if (firebaseUser != null) {
                         val uid = firebaseUser.uid
@@ -45,6 +45,7 @@ internal class AuthRepository {
         return authenticatedUserMutableLiveData
     }
 
+    //Create User in Firestore Database for email, name and UID
     fun createUserInFirestoreIfNotExists(authenticatedUser: User): MutableLiveData<User>? {
         val newUserMutableLiveData = MutableLiveData<User>()
         val uidRef =
