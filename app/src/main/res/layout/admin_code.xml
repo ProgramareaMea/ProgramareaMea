@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/enter_admin"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/background_all">
+
+    <RelativeLayout
+        android:id="@+id/code_form"
+        android:layout_width="328dp"
+        android:layout_height="108dp"
+        android:layout_marginStart="4dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="253dp"
+        android:background="@drawable/code_form">
+
+        <TextView
+            android:id="@+id/label"
+            android:layout_width="0dp"
+            android:layout_height="13dp"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="16dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="16dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="6dp"
+            android:text="@string/label"
+            android:textAppearance="@style/label"
+            android:lineSpacingExtra="0sp"
+            android:gravity="top"
+            android:alpha="0.54"
+            />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="16dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="16dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="24dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="16dp"
+            android:text="@string/input"
+            android:textAppearance="@style/input"
+            android:lineSpacingExtra="0sp"
+            android:gravity="top"
+            />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/field_borde"
+            />
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="649dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="24dp"
+        android:background="@drawable/client_butt">
+
+        <TextView
+            android:layout_width="147dp"
+            android:layout_height="34dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="-3dp"
+            android:layout_marginTop="3dp"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="@string/back"
+            android:textAppearance="@style/back" />
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/admin_butto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="205dp"
+        android:layout_marginTop="649dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/admin_butto">
+
+        <TextView
+            android:layout_width="147dp"
+            android:layout_height="34dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="-3dp"
+            android:layout_marginTop="-3dp"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="@string/submit"
+            android:textAppearance="@style/submit" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="144dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:background="@drawable/top_text">
+
+        <View
+            android:id="@+id/vector_1"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="-5dp"
+            android:background="@drawable/big_vector" />
+
+        <TextView
+            android:layout_width="248.17dp"
+            android:layout_height="67dp"
+            android:layout_marginStart="53dp"
+            android:layout_marginTop="36dp"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="@string/introdu_cod"
+            android:textAppearance="@style/introdu_cod" />
+
+    </RelativeLayout>
+
+
+</RelativeLayout>
