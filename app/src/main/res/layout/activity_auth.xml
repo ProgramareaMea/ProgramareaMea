@@ -2,18 +2,12 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <RelativeLayout
-        xmlns:tools="http://schemas.android.com/tools"
+    <fragment
+        android:id="@+id/NavFragment"
+        android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".activities.AuthActivity">
-
-        <com.google.android.gms.common.SignInButton
-            android:id="@+id/google_sign_in_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            app:buttonSize="wide"/>
-
-    </RelativeLayout>
+        app:navGraph="@navigation/auth_navigator"
+        app:defaultNavHost="true"
+        />
 </layout>
