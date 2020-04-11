@@ -3,9 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/auth_navigator"
-    app:startDestination="@id/googleAuthFragment2">
+    app:startDestination="@id/googleAuthFragment">
     <fragment
-        android:id="@+id/googleAuthFragment2"
+        android:id="@+id/googleAuthFragment"
         android:name="com.tp.programareamea.login.GoogleAuthFragment"
         android:label="GoogleAuthFragment" />
 </navigation>
