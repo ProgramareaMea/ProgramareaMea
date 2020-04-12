@@ -13,15 +13,14 @@ import com.tp.programareamea.utils.Constants.Companion.USER
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
-import kotlinx.android.synthetic.main.fragment_google_auth.view.admin_type_button
-import kotlinx.android.synthetic.main.fragment_user_type.view.*
+import com.tp.programareamea.databinding.FragmentUserTypeBinding
 
 class UserTypeFragment : Fragment() {
-
-    private lateinit var binding: View
+    private lateinit var binding: FragmentUserTypeBinding
     private var googleAuthViewModel: UserTypeViewModel? = null
     val RC_SIGN_IN: Int = 1
     lateinit var mGoogleSignInClient: GoogleSignInClient
@@ -31,16 +30,15 @@ class UserTypeFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?): View? {
-        super.onCreate(savedInstanceState)
 
         //    Get the passed arg User by the navigator
         val authenticatedUser: User = arguments!!.getSerializable("authenticatedUser") as User
-        binding = inflater.inflate(R.layout.fragment_user_type, container, false)
-
+        binding = DataBindingUtil.inflate<FragmentUserTypeBinding>(inflater,R.layout.fragment_user_type,container,false)
+        Toast.makeText(activity,"Changed to type fragment ",Toast.LENGTH_LONG).show()
         initUserTypeViewModel()
         initAdminTypeButton(authenticatedUser);
         initClientTypeButton(authenticatedUser);
-        return binding.rootView
+        return binding.root
 
     }
 
@@ -49,11 +47,11 @@ class UserTypeFragment : Fragment() {
     }
 
     private fun initAdminTypeButton(authenticatedUser: User) {
-        binding.admin_type_button.setOnClickListener { _ -> setUserType(authenticatedUser, true) }
+        binding.adminTypeButton.setOnClickListener { _ -> setUserType(authenticatedUser, true) }
     }
 
     private fun initClientTypeButton(authenticatedUser: User) {
-        binding.client_type_button.setOnClickListener { _ -> setUserType(authenticatedUser, false) }
+        binding.clientTypeButton.setOnClickListener { _ -> setUserType(authenticatedUser, false) }
     }
 
     private fun setUserType(authenticatedUser: User, isAdmin: Boolean ){

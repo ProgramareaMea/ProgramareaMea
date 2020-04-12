@@ -9,7 +9,8 @@ xmlns:app="http://schemas.android.com/apk/res-auto">
     tools:context=".login.GoogleAuthFragment">
 
     <com.google.android.gms.common.SignInButton
-        android:id="@+id/admin_type_button"
+        android:id="@+id/sign_in_button"
+
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"

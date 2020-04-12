@@ -23,12 +23,14 @@ import com.tp.programareamea.utils.Constants.Companion.USER
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.os.bundleOf
+import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
+import com.tp.programareamea.databinding.FragmentGoogleAuthBinding
 import kotlinx.android.synthetic.main.fragment_google_auth.view.*
 
 class GoogleAuthFragment : Fragment() {
 
-    private lateinit var binding: View
+    private lateinit var binding: FragmentGoogleAuthBinding
     private var googleAuthViewModel: GoogleAuthViewModel? = null
     val RC_SIGN_IN: Int = 1
     lateinit var mGoogleSignInClient: GoogleSignInClient
@@ -37,19 +39,19 @@ class GoogleAuthFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?): View? {
-        super.onCreate(savedInstanceState)
-        binding = inflater.inflate(R.layout.fragment_google_auth, container, false)
+
+        binding = DataBindingUtil.inflate<FragmentGoogleAuthBinding>(inflater,R.layout.fragment_google_auth,container,false)
         initGoogleAuthViewModel()
         initSignInButton()
         initGoogleSignInClient()
 
 
-        return binding.rootView
+        return binding.root
 
     }
 
     private fun initSignInButton() {
-        binding.admin_type_button.setOnClickListener { _ -> signIn() }
+        binding.signInButton.setOnClickListener { _ -> signIn() }
     }
 
     private fun initGoogleAuthViewModel() {
@@ -121,6 +123,7 @@ class GoogleAuthFragment : Fragment() {
 
     //Changes to main activity after login
     private fun goToMainActivity(user: User) {
+        Toast.makeText(activity,"Changed to main activty",Toast.LENGTH_LONG).show()
         val intent = Intent(activity, MainActivity::class.java)
         intent.putExtra(USER, user)
         startActivity(intent)
