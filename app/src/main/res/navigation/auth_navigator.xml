@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/auth_navigator"
+    app:startDestination="@id/googleAuthFragment">
+    <fragment
+        android:id="@+id/googleAuthFragment"
+        android:name="com.tp.programareamea.login.GoogleAuthFragment"
+        android:label="GoogleAuthFragment" >
+        <action
+            android:id="@+id/action_googleAuthFragment_to_userTypeFragment"
+            app:destination="@id/userTypeFragment" />
+        <argument
+            android:name="authenticatedUser"
+            app:argType="com.tp.programareamea.firebase.User" />
+    </fragment>
+    <fragment
+        android:id="@+id/userTypeFragment"
+        android:name="com.tp.programareamea.login.UserTypeFragment"
+        android:label="fragment_user_type"
+        tools:layout="@layout/fragment_user_type" />
+</navigation>
