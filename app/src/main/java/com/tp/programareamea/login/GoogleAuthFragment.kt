@@ -19,10 +19,11 @@ import com.tp.programareamea.R
 import com.tp.programareamea.firebase.User
 import com.tp.programareamea.mainActivity.MainActivity
 import com.tp.programareamea.utils.Constants.Companion.USER
-import com.tp.programareamea.login.GoogleAuthViewModel
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
+import androidx.navigation.findNavController
 import kotlinx.android.synthetic.main.fragment_google_auth.view.*
 
 class GoogleAuthFragment : Fragment() {
@@ -38,7 +39,7 @@ class GoogleAuthFragment : Fragment() {
         savedInstanceState: Bundle?): View? {
         super.onCreate(savedInstanceState)
         binding = inflater.inflate(R.layout.fragment_google_auth, container, false)
-        initAuthViewModel()
+        initGoogleAuthViewModel()
         initSignInButton()
         initGoogleSignInClient()
 
@@ -48,10 +49,10 @@ class GoogleAuthFragment : Fragment() {
     }
 
     private fun initSignInButton() {
-        binding.google_sign_in_button.setOnClickListener { _ -> signIn() }
+        binding.admin_type_button.setOnClickListener { _ -> signIn() }
     }
 
-    private fun initAuthViewModel() {
+    private fun initGoogleAuthViewModel() {
         googleAuthViewModel = ViewModelProvider(this).get(GoogleAuthViewModel::class.java)
     }
 
@@ -104,7 +105,7 @@ class GoogleAuthFragment : Fragment() {
         googleAuthViewModel!!.authenticatedUserLiveData!!.observe(this,
             Observer { authenticatedUser: User ->
                 if (authenticatedUser.isNew) {
-                    createNewUser(authenticatedUser)
+                    goToUserTypeFragment(authenticatedUser)
                 } else {
                     goToMainActivity(authenticatedUser)
                 }
@@ -112,23 +113,11 @@ class GoogleAuthFragment : Fragment() {
         )
     }
 
-    //Create User
-    private fun createNewUser(authenticatedUser: User) {
-        googleAuthViewModel!!.createUser(authenticatedUser)
-        googleAuthViewModel!!.createdUserLiveData!!.observe(
-            this,
-            Observer { user: User ->
-                if (user.isCreated) {
-                    Toast.makeText(
-                        activity,
-                        "Hi" + user.name + "\n Your account was successfully created",
-                        Toast.LENGTH_LONG
-                    ).show()
-                }
-                goToMainActivity(user)
-            }
-        )
+    private  fun goToUserTypeFragment(authenticatedUser: User){
+        val bundle = bundleOf("authenticatedUser" to authenticatedUser)
+        view!!.findNavController().navigate(R.id.action_googleAuthFragment_to_userTypeFragment, bundle)
     }
+
 
     //Changes to main activity after login
     private fun goToMainActivity(user: User) {
