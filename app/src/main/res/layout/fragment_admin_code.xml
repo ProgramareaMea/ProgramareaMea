@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/background_all">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="144dp"
+        android:background="@drawable/top_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <View
+            android:id="@+id/vector_1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="0dp"
+            android:background="@drawable/big_vector"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="248.17dp"
+            android:layout_height="67dp"
+            android:layout_marginStart="68dp"
+            android:layout_marginTop="36dp"
+            android:fontFamily="@font/lora"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="@string/introdu_cod"
+            android:textAppearance="@style/introdu_cod"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.326"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.073" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/code_form"
+        android:layout_width="fill_parent"
+        android:layout_height="108dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="252dp"
+        android:layout_marginBottom="360dp"
+        android:background="@drawable/code_form"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout2">
+
+        <EditText
+            android:id="@+id/label"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:alpha="0.54"
+            android:gravity="top"
+            android:lineSpacingExtra="0sp"
+            android:text="@string/label"
+            android:textAppearance="@style/label"
+            tools:ignore="LabelFor,MissingConstraints"
+            android:inputType="textLongMessage"
+            android:importantForAutofill="no" />
+
+        <View
+
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/field_borde"
+            tools:ignore="MissingConstraints" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/admin_butto"
+        android:text="@string/back"
+        android:textAppearance="@style/back"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/code_form"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="52dp" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/client_butt"
+        android:text="@string/submit"
+        android:textAppearance="@style/submit"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/code_form"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="238dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
