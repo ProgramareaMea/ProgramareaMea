@@ -7,5 +7,17 @@
     <fragment
         android:id="@+id/googleAuthFragment"
         android:name="com.tp.programareamea.login.GoogleAuthFragment"
-        android:label="GoogleAuthFragment" />
+        android:label="GoogleAuthFragment" >
+        <action
+            android:id="@+id/action_googleAuthFragment_to_userTypeFragment"
+            app:destination="@id/userTypeFragment" />
+        <argument
+            android:name="authenticatedUser"
+            app:argType="com.tp.programareamea.firebase.User" />
+    </fragment>
+    <fragment
+        android:id="@+id/userTypeFragment"
+        android:name="com.tp.programareamea.login.UserTypeFragment"
+        android:label="fragment_user_type"
+        tools:layout="@layout/fragment_user_type" />
 </navigation>
