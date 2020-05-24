@@ -10,7 +10,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/admin_butto"
+        android:background="@drawable/client_butt"
         android:text="@string/admin"
         android:textAppearance="@style/admin"
         app:layout_constraintBottom_toBottomOf="parent"

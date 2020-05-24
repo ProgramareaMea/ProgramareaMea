@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+android:layout_height="fill_parent"
+android:background="@drawable/background_all">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="431dp"
+        android:layout_height="153dp"
+        android:background="@drawable/top_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <View
+            android:id="@+id/vector_1"
+            android:layout_width="457dp"
+            android:layout_height="242dp"
+            android:background="@drawable/big_vector"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <DatePicker
+        android:id="@+id/datePicker1"
+        android:layout_width="387dp"
+        android:layout_height="440dp"
+        android:calendarTextColor="@color/colorAccent"
+        android:datePickerMode="calendar"
+        android:dayOfWeekTextAppearance="@style/CalenderViewWeekCustomText"
+        android:headerBackground="@drawable/top_text"
+        android:headerYearTextAppearance="@style/CalenderViewDateCustomText"
+        android:scaleX="1.2"
+        android:scaleY="1.2"
+        android:yearListItemTextAppearance="@style/CalenderViewDateCustomText"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.206" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/client_butt"
+        android:text="@string/ok"
+        android:textAppearance="@style/client"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/datePicker1"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="238dp" />
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/client_butt"
+        android:text="@string/cancel"
+        android:textAppearance="@style/admin"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/datePicker1"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="52dp" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -94,7 +94,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/admin_butto"
+        android:background="@drawable/client_butt"
         android:text="@string/back"
         android:textAppearance="@style/back"
         app:layout_constraintBottom_toBottomOf="parent"

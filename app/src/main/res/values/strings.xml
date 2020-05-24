@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">ProgramareaMea</string>
     <string name="programarea">ProgramareaMea</string>
     <string name="bine_ati_ve">Bine ati venit la</string>
@@ -10,9 +10,11 @@
     <string name="back">Back</string>
     <string name="admin">Admin</string>
     <string name="client">Client</string>
-    <string name="alege_i_tip">Alege tipul contului</string>
+    <string name="alege_i_tip" tools:ignore="Typos">Alege tipul contului</string>
     <string name="dashboard">Dashboard</string>
     <string name="nume_prenum">Nume Prenume</string>
     <string name="frizer">Frizer</string>
     <string name="sign_out_button">Sign out</string>
+    <string name="cancel">Cancel</string>
+    <string name="ok">OK</string>
 </resources>
